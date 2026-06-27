@@ -14,3 +14,5 @@ Open [@faq007_bot](https://t.me/faq007_bot) and send `/start`.
 2. Get token from @BotFather
 3. `export BOT_TOKEN="your_token"`
 4. `dotnet run`
+=======
+# telegram-bots-portfolio
