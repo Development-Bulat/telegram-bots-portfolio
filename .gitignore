@@ -4,3 +4,4 @@ obj/
 .idea/
 *.user
 .env
+**/reminders.json

@@ -1,7 +1,7 @@
 # telegram-bots-portfolio
 
 Portfolio of Telegram bots built with **C#** and **.NET**.  
-Two demo bots for small business: FAQ helper and lead capture with admin notifications.
+Three demo bots for small business: FAQ, lead capture, and reminders.
 
 ## Live demo
 
@@ -9,6 +9,7 @@ Two demo bots for small business: FAQ helper and lead capture with admin notific
 |-----|---------|------|
 | **BusinessFaqBot** | FAQ menu with inline buttons (prices, hours, contacts) | [@faq007_bot](https://t.me/faq007_bot) |
 | **LeadBot** | Step-by-step lead form → notification to business owner | [@lead07_bot](https://t.me/lead07_bot) |
+| **ReminderBot** | Create reminders by date/time → bot sends alert when due | [@reminder007_bot](https://t.me/reminder007_bot) |
 
 > Bots are online when the server is running. Open a link and send `/start`.
 
@@ -25,10 +26,17 @@ Two demo bots for small business: FAQ helper and lead capture with admin notific
 - Sends a formatted lead to the admin in Telegram
 - Good for: capturing customer requests without a website
 
+### ReminderBot
+- Commands: `/start`, `/help`, `/remind`, `/list`, `/cancel`
+- Flow: `/remind DD.MM HH:mm Text` → bot notifies at scheduled time
+- Saves reminders to JSON (persists after restart)
+- Good for: appointment reminders, tasks, follow-ups
+
 ## Stack
 
 - C# / .NET
 - [Telegram.Bot](https://github.com/TelegramBots/Telegram.Bot)
+- JSON file storage (ReminderBot)
 - Polling (local run)
 
 ## Project structure
@@ -37,6 +45,7 @@ Two demo bots for small business: FAQ helper and lead capture with admin notific
 tg_bots/
 ├── BusinessFaqBot/
 ├── LeadBot/
+├── ReminderBot/
 ├── TgBots.slnx
 └── README.md
 ```
@@ -66,10 +75,18 @@ export ADMIN_CHAT_ID="your_telegram_user_id"
 dotnet run
 ```
 
+### ReminderBot
+
+```bash
+cd ReminderBot
+export BOT_TOKEN="your_token_from_BotFather"
+dotnet run
+```
+
 **Do not commit tokens.** Use environment variables only.
 
 ## Author
 
 GitHub: [Development-Bulat](https://github.com/Development-Bulat)
 
-Telegram bots for business — FAQ, lead forms, custom automation.
+Telegram bots for business — FAQ, lead forms, reminders, custom automation.
